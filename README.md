@@ -34,7 +34,7 @@ Users should be able to:
 ### Screenshot
 
 ![Desktop](./screenshots/screenshot1.jpg)
-![Mobile](./screenshots/screenshot2.jpg)
+![Mobile](./screenshots/screenshot2.jpg)``
 
 ### Links
 
@@ -64,3 +64,4 @@ Learned more about react hooks and how they work to fulfill the functionality of
 - Website - [Stelio Chichango](https://www.your-site.com)
 - Frontend Mentor - [@SChichango](https://www.frontendmentor.io/profile/SChichango)
 - Twitter - [@itsLxo](https://www.twitter.com/itsLio)
+  ``
