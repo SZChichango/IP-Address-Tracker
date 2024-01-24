@@ -10,7 +10,7 @@ function App() {
 
   async function handleSubmit() {
     setLoading(true);
-    ipInput = document.getElementById("input-field").value;
+    let ipInput = document.getElementById("input-field").value;
     if (ipInput === "") {
       alert("Please enter an IP address");
     } else {
@@ -34,7 +34,8 @@ function App() {
   return (
     <>
       <div className="wrapper">
-        {/* {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : "Loading..."} */}
+        {/* Loading animation */}
+
         <header>
           <h1>IP Address Tracker</h1>
           <div className="ip-input">
@@ -43,28 +44,37 @@ function App() {
               <img src="./src/assets/images/icon-arrow.svg" alt="" />
             </button>
           </div>
-          <div className="ip-info">
-            <div className="info-container">
-              <p>IP ADDRESS</p>
-              <h2>{data ? data.ip : ""}</h2>
+          {loading && (
+            <div className="spinner">
+              <div></div>
+              <div></div>
             </div>
-            <div className="info-container">
-              <p>LOCATION</p>
-              <h2>
-                {data
-                  ? `${data.location.city}, ${data.location.region}, ${data.location.postalCode}`
-                  : ""}
-              </h2>
+          )}
+
+          {data && (
+            <div className="ip-info">
+              <div className="info-container">
+                <p>IP ADDRESS</p>
+                <h2>{data ? data.ip : ""}</h2>
+              </div>
+              <div className="info-container">
+                <p>LOCATION</p>
+                <h2>
+                  {data
+                    ? `${data.location.city}, ${data.location.region}, ${data.location.postalCode}`
+                    : ""}
+                </h2>
+              </div>
+              <div className="info-container">
+                <p>TIMEZONE</p>
+                <h2>{data ? data.location.timezone : ""}</h2>
+              </div>
+              <div className="info-container">
+                <p>ISP</p>
+                <h2>{data ? data.isp : ""}</h2>
+              </div>
             </div>
-            <div className="info-container">
-              <p>TIMEZONE</p>
-              <h2>{data ? data.location.timezone : ""}</h2>
-            </div>
-            <div className="info-container">
-              <p>ISP</p>
-              <h2>{data ? data.isp : ""}</h2>
-            </div>
-          </div>
+          )}
         </header>
 
         <section className="map-container">
