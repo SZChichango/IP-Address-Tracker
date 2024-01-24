@@ -1,0 +1,6 @@
+/** @format */
+
+MapContainer {
+  width: 100%;
+  height: calc(100dvh - 100px);
+}
